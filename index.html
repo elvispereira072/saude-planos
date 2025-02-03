@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Médica Unimed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: #00796b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #009688;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            padding: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: #00796b;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            background-color: #00A859;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service h3 {
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+
+        .service span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .service a {
+            display: inline-block;
+            background: #00796b;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .service a:hover {
+            background: #005b4f;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            max-width: 100%;
+            width: 800px;
+            height: 450px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            background: #00796b;
+            color: white;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                background: #009688;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .service {
+                width: 100%;
+            }
+        }
+
+        #hours {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 2000px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contact {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 2000px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#plans {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 2000px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#videos {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 2000px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Clínica Médica Unimed</h1>
+    </header>
+    <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+    <nav>
+        <ul id="menu">
+            <li><a href="#plans">Planos</a></li>
+            <li><a href="#hours">Horários</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="videos">
+        <h2>Vídeos Unimed</h2>
+        <div class="video-container">
+            <h3>Conheça a Unimed</h3>
+            <iframe src="https://www.youtube.com/embed/igXB7weBgbM" title="Conheça a Unimed"></iframe>
+        </div>
+        <div class="video-container">
+            <h3>Benefícios do Plano Unimed</h3>
+            <iframe src="https://www.youtube.com/embed/Paoy3H2tEEs" title="Benefícios do Plano Unimed"></iframe>
+        </div>
+    </section>
+
+    <section id="plans">
+        <h2>Planos Disponíveis</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Plano Individual</h3>
+                <span>R$ 250,00/mês</span>
+                <a href="#">Saiba mais</a>
+            </div>
+            <div class="service">
+                <h3>Plano Família</h3>
+                <span>R$ 600,00/mês</span>
+                <a href="#">Saiba mais</a>
+            </div>
+            <div class="service">
+                <h3>Plano Empresarial</h3>
+                <span>Entre em contato</span>
+                <a href="#">Saiba mais</a>
+            </div>
+            <div class="service">
+                <h3>Plano Ouro</h3>
+                <span>R$ 1.200,00/mês</span>
+                <a href="#">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hours">
+        <h2>Horário de Funcionamento</h2>
+        <p><strong>Seg - Sex:</strong> 08h - 18h</p>
+        <p><strong>Sábado:</strong> 08h - 12h</p>
+        <p><strong>Domingo:</strong> Fechado</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <p><strong>Telefone:</strong> (11) 9xxxx-xxxx</p>
+        <p><strong>Endereço:</strong> Av. Saúde, 1234 - São Paulo, SP</p>
+        <p><strong>Email:</strong> contato@unimedmedicalclinic.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Clínica Médica Unimed</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
