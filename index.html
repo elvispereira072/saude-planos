@@ -5,279 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Médica Unimed</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-
-        header {
-            background: #00796b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background: #009688;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            padding: 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: #00796b;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-            background-color: #00A859;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .service {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .service h3 {
-            color: #00796b;
-            margin-bottom: 10px;
-        }
-
-        .service span {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .service a {
-            display: inline-block;
-            background: #00796b;
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background 0.3s ease;
-        }
-
-        .service a:hover {
-            background: #005b4f;
-        }
-
-        .video-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .video-container iframe {
-            max-width: 100%;
-            width: 800px;
-            height: 450px;
-            border: none;
-        }
-
-        footer {
-            text-align: center;
-            background: #00796b;
-            color: white;
-            padding: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                text-align: center;
-                background: #009688;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .service {
-                width: 100%;
-            }
-        }
-
-        #hours {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 2000px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#contact {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 2000px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#plans {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 2000px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#videos {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 2000px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header>
-        <h1>Clínica Médica Unimed</h1>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-teal-700 text-white text-center py-6">
+        <h1 class="text-3xl font-bold">Clínica Médica Unimed</h1>
     </header>
-    <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
-    <nav>
-        <ul id="menu">
-            <li><a href="#plans">Planos</a></li>
-            <li><a href="#hours">Horários</a></li>
-            <li><a href="#contact">Contato</a></li>
+    
+    <div class="md:hidden bg-teal-600 text-white text-center py-3 cursor-pointer" onclick="toggleMenu()">Menu</div>
+    <nav class="bg-teal-500 text-white py-3 hidden md:block">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="#plans" class="hover:underline">Planos</a></li>
+            <li><a href="#hours" class="hover:underline">Horários</a></li>
+            <li><a href="#contact" class="hover:underline">Contato</a></li>
         </ul>
     </nav>
-
-    <section id="videos">
-        <h2>Vídeos Unimed</h2>
-        <div class="video-container">
-            <h3>Conheça a Unimed</h3>
-            <iframe src="https://www.youtube.com/embed/igXB7weBgbM" title="Conheça a Unimed"></iframe>
-        </div>
-        <div class="video-container">
-            <h3>Benefícios do Plano Unimed</h3>
-            <iframe src="https://www.youtube.com/embed/Paoy3H2tEEs" title="Benefícios do Plano Unimed"></iframe>
-        </div>
-    </section>
-
-    <section id="plans">
-        <h2>Planos Disponíveis</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Plano Individual</h3>
-                <span>R$ 250,00/mês</span>
-                <a href="#">Saiba mais</a>
+    
+    <section id="videos" class="max-w-4xl mx-auto text-center my-10">
+        <h2 class="text-2xl font-bold text-white bg-teal-700 py-3 rounded-lg">Vídeos Unimed</h2>
+        <div class="mt-6 space-y-6">
+            <div>
+                <h3 class="text-lg font-semibold">Conheça a Unimed</h3>
+                <iframe class="w-full md:w-4/5 h-64 mx-auto" src="https://www.youtube.com/embed/igXB7weBgbM" title="Conheça a Unimed"></iframe>
             </div>
-            <div class="service">
-                <h3>Plano Família</h3>
-                <span>R$ 600,00/mês</span>
-                <a href="#">Saiba mais</a>
-            </div>
-            <div class="service">
-                <h3>Plano Empresarial</h3>
-                <span>Entre em contato</span>
-                <a href="#">Saiba mais</a>
-            </div>
-            <div class="service">
-                <h3>Plano Ouro</h3>
-                <span>R$ 1.200,00/mês</span>
-                <a href="#">Saiba mais</a>
+            <div>
+                <h3 class="text-lg font-semibold">Benefícios do Plano Unimed</h3>
+                <iframe class="w-full md:w-4/5 h-64 mx-auto" src="https://www.youtube.com/embed/Paoy3H2tEEs" title="Benefícios do Plano Unimed"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="hours">
-        <h2>Horário de Funcionamento</h2>
-        <p><strong>Seg - Sex:</strong> 08h - 18h</p>
+    <section id="plans" class="max-w-4xl mx-auto my-10 text-center">
+        <h2 class="text-2xl font-bold text-white bg-teal-700 py-3 rounded-lg">Planos Disponíveis</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-700">Plano Individual</h3>
+                <p class="font-bold">R$ 250,00/mês</p>
+                <a href="#" class="block bg-teal-700 text-white py-2 px-4 mt-4 rounded-lg hover:bg-teal-600">Saiba mais</a>
+            </div>
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-700">Plano Família</h3>
+                <p class="font-bold">R$ 600,00/mês</p>
+                <a href="#" class="block bg-teal-700 text-white py-2 px-4 mt-4 rounded-lg hover:bg-teal-600">Saiba mais</a>
+            </div>
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-700">Plano Empresarial</h3>
+                <p class="font-bold">Entre em contato</p>
+                <a href="#" class="block bg-teal-700 text-white py-2 px-4 mt-4 rounded-lg hover:bg-teal-600">Saiba mais</a>
+            </div>
+            <div class="bg-white shadow-md p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-teal-700">Plano Ouro</h3>
+                <p class="font-bold">R$ 1.200,00/mês</p>
+                <a href="#" class="block bg-teal-700 text-white py-2 px-4 mt-4 rounded-lg hover:bg-teal-600">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hours" class="max-w-2xl mx-auto my-10 text-center bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-2xl font-bold text-teal-700">Horário de Funcionamento</h2>
+        <p class="mt-3"><strong>Seg - Sex:</strong> 08h - 18h</p>
         <p><strong>Sábado:</strong> 08h - 12h</p>
         <p><strong>Domingo:</strong> Fechado</p>
     </section>
 
-    <section id="contact">
-        <h2>Contato</h2>
-        <p><strong>Telefone:</strong> (11) 9xxxx-xxxx</p>
+    <section id="contact" class="max-w-2xl mx-auto my-10 text-center bg-white p-6 shadow-md rounded-lg">
+        <h2 class="text-2xl font-bold text-teal-700">Contato</h2>
+        <p class="mt-3"><strong>Telefone:</strong> (11) 9xxxx-xxxx</p>
         <p><strong>Endereço:</strong> Av. Saúde, 1234 - São Paulo, SP</p>
         <p><strong>Email:</strong> contato@unimedmedicalclinic.com</p>
     </section>
 
-    <footer>
+    <footer class="text-center bg-teal-700 text-white py-4 mt-10">
         <p>&copy; 2024 Clínica Médica Unimed</p>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('nav').classList.toggle('hidden');
         }
     </script>
 </body>
+
+</html>
 
 </html>
